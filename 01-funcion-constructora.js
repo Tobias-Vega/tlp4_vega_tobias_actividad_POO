@@ -5,7 +5,7 @@ const cuentaBancariaPrototype = {
   },
 
   extraer(monto) {
-    if (this.saldoInicial > monto) {
+    if (this.saldoInicial >= monto) {
       this.saldoInicial -= monto;
       console.log(`Se ha retirado $${monto}`)
     } else {
