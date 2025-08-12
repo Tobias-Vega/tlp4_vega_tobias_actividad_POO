@@ -11,11 +11,11 @@ class CuentaBancaria {
     this.titular = titular;
   }
 
-  get saldo() {
+  getSaldo() {
     return this.#saldo;
   }
 
-  set saldo(nuevoSaldo) {
+  setSaldo(nuevoSaldo) {
     if (nuevoSaldo >= 0) {
       this.#saldo = nuevoSaldo;
       console.log(`Nuevo saldo: ${this.#saldo}`)
@@ -41,9 +41,10 @@ class CuentaBancaria {
 
 const cuenta = new CuentaBancaria('Juan', 1000);
 
-console.log(cuenta.saldo);
+console.log(cuenta.getSaldo());
 cuenta.depositar(700);
-console.log(cuenta.saldo)
-cuenta.saldo = 2000;
+console.log(cuenta.getSaldo())
+cuenta.setSaldo(2000);
+cuenta.setSaldo(-1000)
 cuenta.extraer(500);
-console.log(cuenta.saldo);
+console.log(cuenta.getSaldo());
